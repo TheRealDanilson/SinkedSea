@@ -5,5 +5,3 @@
 #include "SinkedSeaBaseVisitor.h"
 
 
-using namespace SinkedSea;
-

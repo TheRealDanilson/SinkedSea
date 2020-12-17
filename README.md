@@ -1,4 +1,5 @@
 # SinkedSea
+This is an interpreter for a simple programming language called `SinkedSea`, whose grammer is specified in `SinkedSea.g4`.
 
 Requirements:
 
@@ -12,6 +13,6 @@ Within the `build` directory, run `cmake ../`
 Then run `make` to build
 
 Run instructions:
-You should now have binary `build/test_antlr`. To use, simply run `build/test_antlr FILE` where `FILE` is any source file.
+You should now have binary `build/SinkedSea`. To use, simply run `build/SinkedSea FILE` where `FILE` is any source file.
 
-There are some example source files in `tests`. Currently, `test_antlr` only prints the AST tree and any syntax errors
+There are some example source files in `examples`.

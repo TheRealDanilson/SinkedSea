@@ -25,8 +25,53 @@ public:
   virtual void enterExpression(SinkedSeaParser::ExpressionContext * /*ctx*/) override { }
   virtual void exitExpression(SinkedSeaParser::ExpressionContext * /*ctx*/) override { }
 
+  virtual void enterNewChan(SinkedSeaParser::NewChanContext * /*ctx*/) override { }
+  virtual void exitNewChan(SinkedSeaParser::NewChanContext * /*ctx*/) override { }
+
+  virtual void enterChanRead(SinkedSeaParser::ChanReadContext * /*ctx*/) override { }
+  virtual void exitChanRead(SinkedSeaParser::ChanReadContext * /*ctx*/) override { }
+
   virtual void enterCommand(SinkedSeaParser::CommandContext * /*ctx*/) override { }
   virtual void exitCommand(SinkedSeaParser::CommandContext * /*ctx*/) override { }
+
+  virtual void enterGlobalAssignment(SinkedSeaParser::GlobalAssignmentContext * /*ctx*/) override { }
+  virtual void exitGlobalAssignment(SinkedSeaParser::GlobalAssignmentContext * /*ctx*/) override { }
+
+  virtual void enterLocalAssignment(SinkedSeaParser::LocalAssignmentContext * /*ctx*/) override { }
+  virtual void exitLocalAssignment(SinkedSeaParser::LocalAssignmentContext * /*ctx*/) override { }
+
+  virtual void enterAssignment(SinkedSeaParser::AssignmentContext * /*ctx*/) override { }
+  virtual void exitAssignment(SinkedSeaParser::AssignmentContext * /*ctx*/) override { }
+
+  virtual void enterDeclaration(SinkedSeaParser::DeclarationContext * /*ctx*/) override { }
+  virtual void exitDeclaration(SinkedSeaParser::DeclarationContext * /*ctx*/) override { }
+
+  virtual void enterCom1(SinkedSeaParser::Com1Context * /*ctx*/) override { }
+  virtual void exitCom1(SinkedSeaParser::Com1Context * /*ctx*/) override { }
+
+  virtual void enterCom2(SinkedSeaParser::Com2Context * /*ctx*/) override { }
+  virtual void exitCom2(SinkedSeaParser::Com2Context * /*ctx*/) override { }
+
+  virtual void enterIf2(SinkedSeaParser::If2Context * /*ctx*/) override { }
+  virtual void exitIf2(SinkedSeaParser::If2Context * /*ctx*/) override { }
+
+  virtual void enterIf1(SinkedSeaParser::If1Context * /*ctx*/) override { }
+  virtual void exitIf1(SinkedSeaParser::If1Context * /*ctx*/) override { }
+
+  virtual void enterReturnE(SinkedSeaParser::ReturnEContext * /*ctx*/) override { }
+  virtual void exitReturnE(SinkedSeaParser::ReturnEContext * /*ctx*/) override { }
+
+  virtual void enterPrint(SinkedSeaParser::PrintContext * /*ctx*/) override { }
+  virtual void exitPrint(SinkedSeaParser::PrintContext * /*ctx*/) override { }
+
+  virtual void enterThread(SinkedSeaParser::ThreadContext * /*ctx*/) override { }
+  virtual void exitThread(SinkedSeaParser::ThreadContext * /*ctx*/) override { }
+
+  virtual void enterChanAssignment(SinkedSeaParser::ChanAssignmentContext * /*ctx*/) override { }
+  virtual void exitChanAssignment(SinkedSeaParser::ChanAssignmentContext * /*ctx*/) override { }
+
+  virtual void enterWhileLoop(SinkedSeaParser::WhileLoopContext * /*ctx*/) override { }
+  virtual void exitWhileLoop(SinkedSeaParser::WhileLoopContext * /*ctx*/) override { }
 
   virtual void enterFile(SinkedSeaParser::FileContext * /*ctx*/) override { }
   virtual void exitFile(SinkedSeaParser::FileContext * /*ctx*/) override { }

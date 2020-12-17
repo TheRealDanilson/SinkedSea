@@ -2,6 +2,7 @@ grammar SinkedSea;
 
 parameters
     : NAME ( ',' NAME )*
+    |
     ;
 
 arguments
@@ -10,46 +11,76 @@ arguments
     ;
 
 expression
-    : NAME
+    : BOOL
     | INT
-    | BOOL
-    | expression BOP expression
+    | NAME
     | NAME '(' arguments ')'
+    | expression MULT expression
+    | expression op=(ADD | SUB) expression
+    | expression LT expression
+    | expression EQ expression
+    | expression AND expression
+    | expression OR expression
+    | newChan
+    | chanRead
     ;
+
+newChan: 'new' 'chan';
+chanRead: 'read' expression;
 
 command
-    : NAME '=' expression ';'
-    | NAME '(' parameters ')' '{' command* '}'
-    | 'if' '(' expression ')' '{' command* '}' 'else' '{' command* '}'
-    | 'if' '(' expression ')' '{' command* '}'
-    | 'return' expression ';'
-    | 'return' ';'
-    | 'print' '(' expression ')' ';'
+    : globalAssignment
+    | localAssignment
+    | assignment
+    | declaration
+    | if2
+    | if1
+    | returnE
+    | print
+    | whileLoop
+    | thread
+    | chanAssignment
+    | expression ';'
     ;
+
+globalAssignment : 'global' NAME '=' expression ';';
+localAssignment : 'local' NAME '=' expression ';';
+assignment : NAME '=' expression ';';
+declaration : NAME '(' parameters ')' '{' command* '}';
+com1 : command*;
+com2 : command*;
+if2 : 'if' '(' expression ')' '{' com1 '}' 'else' '{' com2 '}';
+if1 : 'if' '(' expression ')' '{' com1 '}';
+returnE : 'return' expression ';';
+print: 'print' '(' expression ')' ';';
+thread: 'thread' '(' expression ')' ';';
+chanAssignment: expression '->' expression ';';
+
+whileLoop: 'while' '(' expression ')' '{' command* '}';
 
 file : command* EOF;
-
-NAME
-    : [a-zA-Z][a-zA-Z0-9]*
-    ;
-
-INT
-    : [0-9]+
-    ;
 
 BOOL
     : 'true'
     | 'false'
     ;
 
-BOP
-    : '+'
-    | '-'
-    | '*'
-    | '&&'
-    | '||'
-    | '=='
+NAME
+    : [a-zA-Z][_a-zA-Z0-9]*
     ;
 
+INT
+    : [0-9]+
+    | '-'[0-9]+
+    ;
+
+MULT: '*';
+ADD : '+';
+SUB : '-';
+LT  :'<';
+AND : '&&';
+OR  : '||';
+EQ  : '==';
 
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
+LINE_COMMENT : '//' ~[\r\n]* -> skip ;
