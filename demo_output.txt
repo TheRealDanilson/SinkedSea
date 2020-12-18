@@ -1,0 +1,78 @@
+Welcome to my demo of the SinkedSea interpreter! This script will guide you through some example programs
+All code for the example programs can be found in /home/danilson/CS_4110/project/SinkedSea/examples
+Press any key to continue
+Running command: /home/danilson/CS_4110/project/SinkedSea/build/SinkedSea /home/danilson/CS_4110/project/SinkedSea/examples/factorial.ss
+Let's calculate the factorial of 10 and print the result!
+3628800
+
+Press any key to continue
+Running command: /home/danilson/CS_4110/project/SinkedSea/build/SinkedSea /home/danilson/CS_4110/project/SinkedSea/examples/gcd.ss
+Here we have two different algorithms for calculating the gcd of two numbers
+Let's run them both and see if they get they return the same result
+
+Euclidean GCD of 72 and 54
+18
+
+Dijkstra GCD of 72 and 54
+18
+
+Press any key to continue
+This program will INTENTIONALLY fail due to syntax errors
+Running command: /home/danilson/CS_4110/project/SinkedSea/build/SinkedSea /home/danilson/CS_4110/project/SinkedSea/examples/syntax_errors.ss
+line 6:29 extraneous input ')' expecting ';'
+line 9:41 missing ';' at '<EOF>'
+terminate called after throwing an instance of 'std::bad_any_cast'
+  what():  bad any_cast
+./demo.sh: line 29: 333831 Aborted                 (core dumped) ${cmd}
+
+Press any key to continue
+Running command: /home/danilson/CS_4110/project/SinkedSea/build/SinkedSea /home/danilson/CS_4110/project/SinkedSea/examples/race_conditions.ss
+Let's increment a variable using multiple threads and see if we get inconsistent results
+Reset our variable to 0 and begin incrementing
+We're done incrementing: if there weren't any race conditions we should print 20 but we'll probably get something else
+17
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: if there weren't any race conditions we should print 20 but we'll probably get something else
+17
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: if there weren't any race conditions we should print 20 but we'll probably get something else
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: if there weren't any race conditions we should print 20 but we'll probably get something else
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: if there weren't any race conditions we should print 20 but we'll probably get something else
+20
+
+We're done! You'll probably see that we didn't print the same number each time because of race conditions
+
+Press any key to continue
+Running command: /home/danilson/CS_4110/project/SinkedSea/build/SinkedSea /home/danilson/CS_4110/project/SinkedSea/examples/atomic_increment.ss
+Let's increment a variable using multiple threads and see if we get consistent results
+Reset our variable to 0 and begin incrementing
+We're done incrementing: we should print 20 right after this
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: we should print 20 right after this
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: we should print 20 right after this
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: we should print 20 right after this
+20
+
+Reset our variable to 0 and begin incrementing
+We're done incrementing: we should print 20 right after this
+20
+
+We're done! You should see that we printed the number 20 five times.
+
+This concludes the demo. Have a good day!
