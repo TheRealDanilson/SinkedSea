@@ -22,7 +22,7 @@ You should now have binary `build/SinkedSea`. To use, simply run `build/SinkedSe
 Demo:
 Within the `examples` folder are programs that demo specific features of `SinkedSea`. These can be run without any modification.
 
-For quickly run the demo programs, use the `demo.sh` script. Below are some short descriptions of the demo programs
+To quickly run the demo programs, use the `demo.sh` script. Below are some short descriptions of the demo programs
 
 `build/SinkedSea examples/atomic_increment.ss` Demonstrates multiple threads incrementing a global variable atomically using channels
 
