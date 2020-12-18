@@ -109,29 +109,31 @@ namespace SinkedSea
         }
         case EQ:
         {
-            if (v1.type() == typeid(bool))
+            if (v1.type() == typeid(bool) && v2.type() == typeid(bool))
             {
                 bool b1 = std::any_cast<bool>(v1);
                 bool b2 = std::any_cast<bool>(v2);
                 val = b1 == b2;
             }
-            else if (v1.type() == typeid(int))
+            else if (v1.type() == typeid(int) && v2.type() == typeid(int) )
             {
                 int i1 = std::any_cast<int>(v1);
                 int i2 = std::any_cast<int>(v2);
                 val = i1 == i2;
             }
-            else if (v1.type() == typeid(std::string))
+            else if (v1.type() == typeid(std::string) && v2.type() == typeid(std::string))
             {
                 std::string s1 = std::any_cast<std::string>(v1);
                 std::string s2 = std::any_cast<std::string>(v2);
                 val = s1 == s2;
             }
-            else if (v1.type() == typeid(std::shared_ptr<Channel>))
+            else if (v1.type() == typeid(std::shared_ptr<Channel>) && v2.type() == typeid(std::shared_ptr<Channel>))
             {
                 std::shared_ptr<Channel> c1 = std::any_cast<std::shared_ptr<Channel>>(v1);
                 std::shared_ptr<Channel> c2 = std::any_cast<std::shared_ptr<Channel>>(v2);
                 val = c1.get() == c2.get();
+            } else {
+                val = false;
             }
             break;
         }
