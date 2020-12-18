@@ -82,6 +82,15 @@ namespace SinkedSea
                 }
                 return shared_ptr<Tree>(bTree);
             }
+
+            if (context->STR() != NULL) {
+                string s = context->STR()->getText();
+                s = s.substr(1, s.length() - 2); // Remove quotes around string
+                StringTree *sTree = new StringTree;
+                sTree->val = s;
+                return shared_ptr<Tree>(sTree);
+            }
+
             if (context->op != NULL || context->MULT() != NULL || context->LT() != NULL || context->EQ() != NULL || context->AND() != NULL || context->OR() != NULL)
             {
                 auto exp1 = context->expression()[0];

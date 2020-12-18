@@ -6,7 +6,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(CMAKE_CXX_STANDARD 17)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Og -g" CACHE STRING "Set C++ Compiler Flags" FORCE)
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -g" CACHE STRING "Set C++ Compiler Flags" FORCE)
 
 find_package(Antlr4 REQUIRED)
 include_directories(${ANTLR4_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/antlr4-runtime)

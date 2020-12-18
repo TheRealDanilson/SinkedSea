@@ -15,8 +15,8 @@ public:
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
     T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, 
     T__14 = 15, T__15 = 16, T__16 = 17, T__17 = 18, T__18 = 19, BOOL = 20, 
-    NAME = 21, INT = 22, MULT = 23, ADD = 24, SUB = 25, LT = 26, AND = 27, 
-    OR = 28, EQ = 29, WS = 30, LINE_COMMENT = 31
+    NAME = 21, STR = 22, INT = 23, MULT = 24, ADD = 25, SUB = 26, LT = 27, 
+    AND = 28, OR = 29, EQ = 30, WS = 31, LINE_COMMENT = 32
   };
 
   SinkedSeaLexer(antlr4::CharStream *input);

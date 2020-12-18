@@ -35,6 +35,11 @@ namespace SinkedSea
         return std::make_tuple(st, val);
     }
 
+    std::tuple<Store, std::any> StringTree::eval(Store st)
+    {
+        return std::make_tuple(st, val);
+    }
+
     std::tuple<Store, std::any> ChanTree::eval(Store st)
     {
         return std::make_tuple(st, ch);
@@ -115,6 +120,12 @@ namespace SinkedSea
                 int i1 = std::any_cast<int>(v1);
                 int i2 = std::any_cast<int>(v2);
                 val = i1 == i2;
+            }
+            else if (v1.type() == typeid(std::string))
+            {
+                std::string s1 = std::any_cast<std::string>(v1);
+                std::string s2 = std::any_cast<std::string>(v2);
+                val = s1 == s2;
             }
             else if (v1.type() == typeid(std::shared_ptr<Channel>))
             {
@@ -261,6 +272,11 @@ namespace SinkedSea
         if (v.type() == typeid(bool))
         {
             std::cout << std::any_cast<bool>(v) << std::endl;
+        }
+
+        if (v.type() == typeid(std::string))
+        {
+            std::cout << std::any_cast<std::string>(v) << std::endl;
         }
 
         return std::make_tuple(st, std::any());

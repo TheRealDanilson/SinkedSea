@@ -63,6 +63,16 @@ namespace SinkedSea
         std::tuple<Store, std::any> eval(Store st) override;
     };
 
+    // Evaluates to the string stored in this tree
+    class StringTree : public Tree
+    {
+    public:
+        std::string val;
+
+    public:
+        std::tuple<Store, std::any> eval(Store st) override;
+    };
+
     // Evaluates to the boolean stored in this tree
     class ChanTree : public Tree
     {

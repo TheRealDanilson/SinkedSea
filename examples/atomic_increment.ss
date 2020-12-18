@@ -1,5 +1,4 @@
 // Simple implementation of a lock using channels
-// While using a lock primitive would be more efficient
 global mutexCh = new chan;
 lock() {
     read mutexCh; // "Grab" the lock
@@ -31,13 +30,18 @@ increment() {
 
 i = 0;
 // Test our increment function with multiple threads and verify that n has the correct value each time
+print("Let's increment a variable using multiple threads and see if we get consistent results");
 while (i < 5) {
+    print("Reset our variable to 0 and begin incrementing");
     n = 0;
     thread(increment());
     thread(increment());
     read doneCh;
     read doneCh;
+    print("We're done incrementing: we should print 20 right after this");
     print(n); // Should print 20
+    print("");
     n = 0;
     i = i + 1;
 }
+print("We're done! You should see that we printed the number 20 five times.");

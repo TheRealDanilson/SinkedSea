@@ -15,6 +15,7 @@ expression
     | INT
     | NAME
     | NAME '(' arguments ')'
+    | STR
     | expression MULT expression
     | expression op=(ADD | SUB) expression
     | expression LT expression
@@ -67,6 +68,13 @@ BOOL
 
 NAME
     : [a-zA-Z][_a-zA-Z0-9]*
+    ;
+
+fragment
+ESC: '\\"' | '\\\\';
+
+STR
+    : '"' (ESC | .)*? '"'
     ;
 
 INT
