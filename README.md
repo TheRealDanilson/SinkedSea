@@ -5,7 +5,8 @@ This is an interpreter for a simple programming language called `SinkedSea`, who
 Requirements:
 
 CMake 3.7
-antlr4-cpp-runtime 4.8
+
+antlr4-cpp-runtime 4.8 (download for Mac/Windows at https://www.antlr.org/download.html)
 
 Build Instructions:
 Create directory `build`
