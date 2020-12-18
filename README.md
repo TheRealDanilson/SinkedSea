@@ -6,7 +6,9 @@ Requirements:
 
 CMake 3.7
 
-antlr4-cpp-runtime 4.8 (download for Mac/Windows at https://www.antlr.org/download.html)
+antlr4-cpp-runtime 4.8 (download for Mac/Windows at https://www.antlr.org/download.html in the "C++ Target" section)
+
+Compiler with C++17 and pthreads support
 
 Build Instructions:
 Create directory `build`
@@ -19,6 +21,8 @@ You should now have binary `build/SinkedSea`. To use, simply run `build/SinkedSe
 
 Demo:
 Within the `examples` folder are programs that demo specific features of `SinkedSea`. These can be run without any modification.
+
+For quickly run the demo programs, use the `demo.sh` script. Below are some short descriptions of the demo programs
 
 `build/SinkedSea examples/atomic_increment.ss` Demonstrates multiple threads incrementing a global variable atomically using channels
 
