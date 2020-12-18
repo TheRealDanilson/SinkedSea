@@ -1,5 +1,5 @@
 # SinkedSea
-This is an interpreter for a simple programming language called `SinkedSea`, whose grammer is specified in `SinkedSea.g4`.
+This is an interpreter for a simple programming language called `SinkedSea`, whose grammar is specified in `SinkedSea.g4`.
 `SinkedSea` is untyped, but supports integer, boolean, and channels natively. There's support for string literals, but no operations on them excepting printing.
 
 Requirements:
